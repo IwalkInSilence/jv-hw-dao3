@@ -4,11 +4,10 @@ import core.dao.ManufacturerDao;
 import core.lib.Inject;
 import core.lib.Service;
 import core.model.Manufacturer;
-
 import java.util.List;
 
 @Service
-public class ManufacturerServiceImpl implements ManufacturerService{
+public class ManufacturerServiceImpl implements ManufacturerService {
     @Inject
     ManufacturerDao manufacturerDao;
 

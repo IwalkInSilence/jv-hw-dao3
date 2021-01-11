@@ -1,7 +1,6 @@
 package core.service;
 
 import core.model.Manufacturer;
-
 import java.util.List;
 
 public interface ManufacturerService {
