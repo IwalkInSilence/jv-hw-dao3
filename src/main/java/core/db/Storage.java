@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Storage {
-    public static List<Manufacturer> manufacturers = new ArrayList<>();
+    public static final List<Manufacturer> manufacturers = new ArrayList<>();
     private static long manufacturerId = 0;
 
     public static void addManufacturer(Manufacturer manufacturer) {

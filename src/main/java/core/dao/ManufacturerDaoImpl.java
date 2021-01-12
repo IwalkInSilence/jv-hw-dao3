@@ -28,22 +28,11 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        Manufacturer updateManufacturer = getAll().stream()
-                .filter(m -> m.getId().equals(manufacturer.getId()))
-                .findFirst()
-                .get();
-        updateManufacturer.setCountry(manufacturer.getCountry());
-        updateManufacturer.setName(manufacturer.getName());
-        return updateManufacturer;
+        return getAll().set(manufacturer.getId().intValue() - 1, manufacturer);
     }
 
     @Override
     public boolean delete(Long id) {
-        Manufacturer manufacturer = getAll()
-                .stream()
-                .filter(m -> m.getId().equals(id))
-                .findFirst()
-                .get();
-        return Storage.manufacturers.remove(manufacturer);
+        return getAll().removeIf(m -> m.getId().equals(id));
     }
 }
