@@ -20,8 +20,8 @@ public class Application {
         manufacturerService.create(volvo);
         manufacturerService.create(ferrari);
         System.out.println(manufacturerService.get(3L));
-        System.out.println(manufacturerService.getAll().toString());
-        manufacturerService.update(audi);
+        System.out.println(manufacturerService.getAll());
+        System.out.println(manufacturerService.update(audi));
         System.out.println(manufacturerService.getAll());
         manufacturerService.delete(2L);
         System.out.println(manufacturerService.getAll());

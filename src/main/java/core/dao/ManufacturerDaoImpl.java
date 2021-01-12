@@ -33,7 +33,8 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
                 .findFirst()
                 .get();
         int indexOfUpdatedManufacturer = getAll().indexOf(updateManufacturer);
-        return getAll().set(indexOfUpdatedManufacturer, manufacturer);
+        getAll().set(indexOfUpdatedManufacturer, manufacturer);
+        return manufacturer;
     }
 
     @Override
