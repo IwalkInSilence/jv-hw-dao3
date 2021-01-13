@@ -8,7 +8,6 @@ import java.util.List;
 
 @Service
 public class DriverServiceImpl implements DriverService {
-
     @Inject
     private DriverDao driverDao;
 

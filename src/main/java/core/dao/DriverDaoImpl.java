@@ -7,7 +7,6 @@ import java.util.List;
 
 @Dao
 public class DriverDaoImpl implements DriverDao {
-
     @Override
     public Driver create(Driver driver) {
         Storage.addDriver(driver);

@@ -10,7 +10,6 @@ import java.util.List;
 
 @Service
 public class CarServiceImpl implements CarService {
-
     @Inject
     private CarDao carDao;
 
