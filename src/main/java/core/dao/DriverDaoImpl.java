@@ -28,7 +28,7 @@ public class DriverDaoImpl implements DriverDao {
 
     @Override
     public Driver update(Driver driver) {
-        int indexOfDriverToUpdate = Storage.drivers.indexOf(get(driver.getId()));
+        int indexOfDriverToUpdate = getAll().indexOf(get(driver.getId()));
         getAll().set(indexOfDriverToUpdate, driver);
         return driver;
     }
