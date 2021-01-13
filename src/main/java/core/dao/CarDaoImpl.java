@@ -28,11 +28,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car update(Car car) {
-        Car updatedCar = getAll().stream()
-                .filter(c -> c.getId().equals(car.getId()))
-                .findFirst()
-                .get();
-        int indexOfUpdatedCar = getAll().indexOf(updatedCar);
+        int indexOfUpdatedCar = Storage.cars.indexOf(get(car.getId()));
         getAll().set(indexOfUpdatedCar, car);
         return car;
     }

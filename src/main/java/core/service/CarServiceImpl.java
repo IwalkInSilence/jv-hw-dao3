@@ -1,7 +1,6 @@
 package core.service;
 
 import core.dao.CarDao;
-import core.dao.DriverDao;
 import core.lib.Inject;
 import core.lib.Service;
 import core.model.Car;
@@ -12,9 +11,6 @@ import java.util.List;
 public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
-
-    @Inject
-    private DriverDao driverDao;
 
     @Override
     public Car create(Car car) {

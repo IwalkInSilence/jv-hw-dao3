@@ -28,12 +28,8 @@ public class DriverDaoImpl implements DriverDao {
 
     @Override
     public Driver update(Driver driver) {
-        Driver driverToUpdate = getAll().stream()
-                .filter(d -> d.getId().equals(driver.getId()))
-                .findFirst()
-                .get();
-        int indexOfDriver = getAll().indexOf(driverToUpdate);
-        getAll().set(indexOfDriver, driver);
+        int indexOfDriverToUpdate = Storage.drivers.indexOf(get(driver.getId()));
+        getAll().set(indexOfDriverToUpdate, driver);
         return driver;
     }
 
