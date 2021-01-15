@@ -92,15 +92,14 @@ public class ManufacturerDaoJdbcImpl implements ManufacturerDao {
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setLong(1, id);
-            int updatedRows = statement.executeUpdate();
-            return updatedRows > 0;
+            return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new DataProcessingException("Can't delete  manufacturer with id" + id, e);
         }
     }
 
     private Manufacturer getManudacturer(ResultSet resultSet) throws SQLException {
-        long manufacturerId = resultSet.getObject("id", Long.class);
+        Long manufacturerId = resultSet.getObject("id", Long.class);
         String manufacturerName = resultSet.getString("name");
         String manufacturerCountry = resultSet.getString("country");
         Manufacturer manufacturer = new Manufacturer(manufacturerName, manufacturerCountry);
