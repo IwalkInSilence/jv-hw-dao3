@@ -46,7 +46,8 @@ public class Application {
         System.out.println(driverService.getAll());
         System.out.println(driverService.get(2L));
 
-        Car toyotaCamry = new Car("Camry", new Manufacturer("Toyota", "Japan"));
+        Car toyotaCamry = new Car("Camry", manufacturerService.create(
+                new Manufacturer("Toyota", "Japan")));
         Car mercedesGelandewagen = new Car("Gelandewagen", mercedes);
         Car audiA8 = new Car("A8", audi);
         Car volvoXC90 = new Car("XC90", volvo);
