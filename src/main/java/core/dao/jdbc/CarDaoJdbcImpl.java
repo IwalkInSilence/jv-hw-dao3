@@ -33,13 +33,13 @@ public class CarDaoJdbcImpl implements CarDao {
             return car;
         } catch (SQLException e) {
             throw new DataProcessingException("Can't create car "
-                    + car.toString() + " in DB", e);
+                    + car + " in DB", e);
         }
     }
 
     @Override
     public Optional<Car> get(Long id) {
-        String query = "SELECT * "
+        String query = "SELECT c.id, manufacturer_id, model, name, country "
                 + "FROM cars c "
                 + "INNER JOIN manufacturers m "
                 + "ON m.id = c.manufacturer_id "
@@ -63,8 +63,7 @@ public class CarDaoJdbcImpl implements CarDao {
 
     @Override
     public List<Car> getAll() {
-        Car car = null;
-        String query = "SELECT * "
+        String query = "SELECT c.id, manufacturer_id, model, name, country "
                 + "FROM cars c "
                 + "INNER JOIN manufacturers m "
                 + "ON c.manufacturer_id = m.id "
