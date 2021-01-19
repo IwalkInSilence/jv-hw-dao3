@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Dao
 public class DriverDaoJdbcImpl implements DriverDao {
@@ -35,7 +36,7 @@ public class DriverDaoJdbcImpl implements DriverDao {
     }
 
     @Override
-    public Driver get(Long id) {
+    public Optional<Driver> get(Long id) {
         String query = "SELECT * FROM drivers WHERE id = ? AND deleted = false";
         Driver driver = null;
         try (Connection connection = ConnectionUtil.getConnection();
@@ -48,7 +49,7 @@ public class DriverDaoJdbcImpl implements DriverDao {
         } catch (SQLException e) {
             throw new DataProcessingException("Can't get driver with Id " + id, e);
         }
-        return driver;
+        return Optional.ofNullable(driver);
     }
 
     @Override

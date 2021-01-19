@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Dao
 public class CarDaoJdbcImpl implements CarDao {
@@ -37,7 +38,7 @@ public class CarDaoJdbcImpl implements CarDao {
     }
 
     @Override
-    public Car get(Long id) {
+    public Optional<Car> get(Long id) {
         String query = "SELECT * "
                 + "FROM cars c "
                 + "INNER JOIN manufacturers m "
@@ -48,15 +49,16 @@ public class CarDaoJdbcImpl implements CarDao {
                 PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
-            List<Driver> drivers = getDrivers(id);
             if (resultSet.next()) {
                 car = getCar(resultSet);
+                List<Driver> drivers = getDrivers(id);
                 car.setDrivers(drivers);
+                return Optional.ofNullable(car);
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Can't get car with ID " + id, e);
         }
-        return car;
+        return Optional.ofNullable(car);
     }
 
     @Override
@@ -73,7 +75,7 @@ public class CarDaoJdbcImpl implements CarDao {
             List<Car> carList = new ArrayList<>();
             while (resultSet.next()) {
                 Long id = resultSet.getObject(1, Long.class);
-                carList.add(get(id));
+                carList.add(get(id).get());
             }
             return carList;
         } catch (SQLException e) {
