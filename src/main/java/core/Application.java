@@ -70,7 +70,7 @@ public class Application {
         carService.removeDriverFromCar(driverJohn, toyotaCamry);
         System.out.println(toyotaCamry);
         System.out.println(carService.getAll());
-        System.out.println(carService.get(1L));
+        System.out.println(carService.get(2L));
         carService.delete(1L);
         System.out.println(carService.getAll());
         toyotaCamry.setId(2L);

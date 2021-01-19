@@ -51,8 +51,6 @@ public class CarDaoJdbcImpl implements CarDao {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 car = getCar(resultSet);
-                List<Driver> drivers = getDrivers(id);
-                car.setDrivers(drivers);
                 return Optional.ofNullable(car);
             }
         } catch (SQLException e) {
@@ -73,8 +71,7 @@ public class CarDaoJdbcImpl implements CarDao {
             ResultSet resultSet = statement.executeQuery();
             List<Car> carList = new ArrayList<>();
             while (resultSet.next()) {
-                Long id = resultSet.getObject(1, Long.class);
-                carList.add(get(id).get());
+                carList.add(getCar(resultSet));
             }
             return carList;
         } catch (SQLException e) {
