@@ -8,10 +8,72 @@
         <servlet-name>index</servlet-name>
         <servlet-class>core.controllers.IndexController</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>index</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allDrivers</servlet-name>
+        <servlet-class>core.controllers.GetAllDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allDrivers</servlet-name>
+        <url-pattern>/driver/all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>driverCreate</servlet-name>
+        <servlet-class>core.controllers.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverCreate</servlet-name>
+        <url-pattern>/driver/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allManufacturers</servlet-name>
+        <servlet-class>core.controllers.GetAllManufactureController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allManufacturers</servlet-name>
+        <url-pattern>/mn/all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manufactureCreate</servlet-name>
+        <servlet-class>core.controllers.CreateManufactureController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufactureCreate</servlet-name>
+        <url-pattern>/mn/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allCars</servlet-name>
+        <servlet-class>core.controllers.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allCars</servlet-name>
+        <url-pattern>/car/all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>carCreate</servlet-name>
+        <servlet-class>core.controllers.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>carCreate</servlet-name>
+        <url-pattern>/car/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-class>core.controllers.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriverToCar</servlet-name>
+        <url-pattern>/car/add</url-pattern>
     </servlet-mapping>
 
 </web-app>
