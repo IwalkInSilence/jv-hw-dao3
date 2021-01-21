@@ -11,6 +11,8 @@
         <th>ID</th>
         <th>Model</th>
         <th>Manufacturer</th>
+        <th>Drivers</th>
+        <th>Delete</th>
     </tr>
     <%--@elvariable id="drivers" type="java.util.List"--%>
     <c:forEach var="car" items="${cars}">
@@ -26,6 +28,9 @@
             </td>
             <td>
                 <c:out value="${car.drivers}"/>
+            </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/car/delete?id=${car.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>allDrivers</servlet-name>
-        <servlet-class>core.controllers.GetAllDriverController</servlet-class>
+        <servlet-class>core.controllers.driver.GetAllDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>allDrivers</servlet-name>
@@ -24,7 +24,7 @@
 
     <servlet>
         <servlet-name>driverCreate</servlet-name>
-        <servlet-class>core.controllers.CreateDriverController</servlet-class>
+        <servlet-class>core.controllers.driver.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>driverCreate</servlet-name>
@@ -32,8 +32,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>driverDelete</servlet-name>
+        <servlet-class>core.controllers.driver.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverDelete</servlet-name>
+        <url-pattern>/driver/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>allManufacturers</servlet-name>
-        <servlet-class>core.controllers.GetAllManufactureController</servlet-class>
+        <servlet-class>core.controllers.manufacturer.GetAllManufactureController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>allManufacturers</servlet-name>
@@ -42,7 +51,7 @@
 
     <servlet>
         <servlet-name>manufactureCreate</servlet-name>
-        <servlet-class>core.controllers.CreateManufactureController</servlet-class>
+        <servlet-class>core.controllers.manufacturer.CreateManufactureController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>manufactureCreate</servlet-name>
@@ -50,8 +59,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>manufactureDelete</servlet-name>
+        <servlet-class>core.controllers.manufacturer.DeleteManufactureController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufactureDelete</servlet-name>
+        <url-pattern>/mn/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>allCars</servlet-name>
-        <servlet-class>core.controllers.GetAllCarsController</servlet-class>
+        <servlet-class>core.controllers.car.GetAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>allCars</servlet-name>
@@ -60,7 +78,7 @@
 
     <servlet>
         <servlet-name>carCreate</servlet-name>
-        <servlet-class>core.controllers.CreateCarController</servlet-class>
+        <servlet-class>core.controllers.car.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>carCreate</servlet-name>
@@ -68,8 +86,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>carDelete</servlet-name>
+        <servlet-class>core.controllers.car.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>carDelete</servlet-name>
+        <url-pattern>/car/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>addDriverToCar</servlet-name>
-        <servlet-class>core.controllers.AddDriverToCarController</servlet-class>
+        <servlet-class>core.controllers.driver.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>

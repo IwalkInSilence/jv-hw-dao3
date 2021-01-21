@@ -1,4 +1,4 @@
-package core.controllers;
+package core.controllers.driver;
 
 import core.lib.Injector;
 import core.model.Driver;

@@ -1,4 +1,4 @@
-package core.controllers;
+package core.controllers.car;
 
 import core.lib.Injector;
 import core.model.Car;

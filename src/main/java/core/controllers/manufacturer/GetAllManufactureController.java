@@ -1,4 +1,4 @@
-package core.controllers;
+package core.controllers.manufacturer;
 
 import core.lib.Injector;
 import core.model.Manufacturer;
