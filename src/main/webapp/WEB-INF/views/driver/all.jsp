@@ -13,7 +13,6 @@
         <th>License Number</th>
         <th>Delete</th>
     </tr>
-    <%--@elvariable id="drivers" type="java.util.List"--%>
     <c:forEach var="driver" items="${drivers}">
         <tr>
             <td>
@@ -26,7 +25,7 @@
                 <c:out value="${driver.licenseNumber}"/>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/driver/delete?id=${driver.id}">Delete</a>
+                <a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

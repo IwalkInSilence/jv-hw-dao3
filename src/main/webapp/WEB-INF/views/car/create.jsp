@@ -6,7 +6,7 @@
 <body>
 <h1> Car creator </h1>
 
-<form method="post" action="${pageContext.request.contextPath}/car/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Please provide Car model <input type="text" name="model" required>
     Please provide Car Manufacturer name <input type="text" name="name" required>
     Please provide Car Manufacturer country <input type="text" name="country" required>

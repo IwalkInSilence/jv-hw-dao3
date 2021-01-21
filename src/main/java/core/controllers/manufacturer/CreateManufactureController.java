@@ -29,6 +29,6 @@ public class CreateManufactureController extends HttpServlet {
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturerService.create(manufacturer);
-        resp.sendRedirect(req.getContextPath() + "/mn/all");
+        resp.sendRedirect(req.getContextPath() + "/manufacturer/all");
     }
 }
