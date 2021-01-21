@@ -22,7 +22,10 @@
                 <c:out value="${car.model}"/>
             </td>
             <td>
-                <c:out value="${car.manufacturer}"/>
+                <c:out value="${car.manufacturer.name}"/>
+            </td>
+            <td>
+                <c:out value="${car.drivers}"/>
             </td>
         </tr>
     </c:forEach>
