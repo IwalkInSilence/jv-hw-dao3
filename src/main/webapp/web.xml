@@ -8,10 +8,99 @@
         <servlet-name>index</servlet-name>
         <servlet-class>core.controllers.IndexController</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>index</servlet-name>
-        <url-pattern>/index</url-pattern>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allDrivers</servlet-name>
+        <servlet-class>core.controllers.driver.GetAllDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allDrivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>driverCreate</servlet-name>
+        <servlet-class>core.controllers.driver.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverCreate</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>driverDelete</servlet-name>
+        <servlet-class>core.controllers.driver.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverDelete</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allManufacturers</servlet-name>
+        <servlet-class>core.controllers.manufacturer.GetAllManufactureController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allManufacturers</servlet-name>
+        <url-pattern>/manufacturer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manufactureCreate</servlet-name>
+        <servlet-class>core.controllers.manufacturer.CreateManufactureController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufactureCreate</servlet-name>
+        <url-pattern>/manufacturer/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manufactureDelete</servlet-name>
+        <servlet-class>core.controllers.manufacturer.DeleteManufactureController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufactureDelete</servlet-name>
+        <url-pattern>/manufacturer/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>allCars</servlet-name>
+        <servlet-class>core.controllers.car.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allCars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>carCreate</servlet-name>
+        <servlet-class>core.controllers.car.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>carCreate</servlet-name>
+        <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>carDelete</servlet-name>
+        <servlet-class>core.controllers.car.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>carDelete</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-class>core.controllers.driver.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriverToCar</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 
 </web-app>

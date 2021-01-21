@@ -6,6 +6,14 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
+    static {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("Can't find MySQL driver", e);
+        }
+    }
+
     private static final String USER = "root";
     private static final String PASSWORD = "1111";
 
