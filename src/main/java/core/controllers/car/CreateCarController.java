@@ -32,7 +32,6 @@ public class CreateCarController extends HttpServlet {
         String country = req.getParameter("country");
         Car car = new Car(model, manufacturerService.create(new Manufacturer(name, country)));
         carService.create(car);
-        System.out.println(model + " " + name + " " + country);
         resp.sendRedirect(req.getContextPath() + "/car/all");
     }
 }
