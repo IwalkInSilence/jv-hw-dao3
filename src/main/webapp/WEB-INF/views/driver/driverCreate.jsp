@@ -9,7 +9,9 @@
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Please provide Driver name <input type="text" name="name" required>
     Please provide Driver License Number <input type="text" name="licenseNumber" required>
-    <button type="submit">Add Driver</button>
+    Login <input type="text" name="login" required>
+    Password <input type="text" name="pwd" required>
+    <button type="submit">Registration</button>
 </form>
 </body>
 </html>
