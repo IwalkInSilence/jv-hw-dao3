@@ -1,20 +1,16 @@
-package core.web.filters;
+package core.controllers.car;
 
 import core.lib.Injector;
 import core.model.Car;
 import core.service.CarService;
 import java.io.IOException;
 import java.util.List;
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CarsForDriverFilter implements Filter {
+public class GetMyCurrentCarsController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("core");
     private static final String DRIVER_ID = "driver_id";
@@ -22,24 +18,13 @@ public class CarsForDriverFilter implements Filter {
             (CarService) injector.getInstance(CarService.class);
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-
-    }
-
-    @Override
-    public void doFilter(ServletRequest servletRequest,
-                         ServletResponse servletResponse, FilterChain chain)
-            throws IOException, ServletException {
-        HttpServletRequest req = (HttpServletRequest) servletRequest;
-        HttpServletResponse resp = (HttpServletResponse) servletResponse;
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         Long driverId = (Long) req.getSession().getAttribute(DRIVER_ID);
         List<Car> allByDriver = carService.getAllByDriver(driverId);
         req.setAttribute("cars", allByDriver);
         req.getRequestDispatcher("/WEB-INF/views/car/all.jsp").forward(req, resp);
     }
 
-    @Override
-    public void destroy() {
-
-    }
 }
+
