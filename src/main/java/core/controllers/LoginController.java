@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 public class LoginController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("core");
+    private static final String DRIVER_ID = "driver_id";
     private final AuthenticationService authService =
             (AuthenticationService) injector.getInstance(AuthenticationService.class);
 
@@ -31,7 +32,7 @@ public class LoginController extends HttpServlet {
         try {
             Driver driver = authService.login(login, password);
             HttpSession session = req.getSession();
-            session.setAttribute("driver_id", driver.getId());
+            session.setAttribute(DRIVER_ID, driver.getId());
         } catch (AuthenticationException e) {
             req.setAttribute("message", e.getMessage());
             req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
