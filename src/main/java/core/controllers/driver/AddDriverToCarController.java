@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("core");
+    private static final String DRIVER_ID = "driver_id";
+    private static final String CAR_ID = "car_id";
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService =
@@ -27,8 +29,8 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(request.getParameter("driver_id"));
-        Long carId = Long.valueOf(request.getParameter("car_id"));
+        Long driverId = Long.valueOf(request.getParameter(DRIVER_ID));
+        Long carId = Long.valueOf(request.getParameter(CAR_ID));
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);

@@ -17,6 +17,10 @@ CREATE TABLE `daohw`.`drivers` (
                                    `deleted` TINYINT NOT NULL DEFAULT 0,
                                    PRIMARY KEY (`id`));
 
+ALTER TABLE `daohw`.`drivers`
+ADD COLUMN `login` VARCHAR(150) NOT NULL AFTER `deleted`,
+ADD COLUMN `password` VARCHAR(150) NOT NULL AFTER `login`;
+
 CREATE TABLE `daohw`.`cars` (
                                 `id` BIGINT(11) NOT NULL AUTO_INCREMENT,
                                 `manufacturer_id` BIGINT(11) NOT NULL,
