@@ -1,8 +1,8 @@
 package core.web.filters;
 
-import core.lib.Injector;
-import core.service.DriverService;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -13,11 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AuthenticationFilter implements Filter {
-    private static final Injector injector =
-            Injector.getInstance("core");
     private static final String DRIVER_ID = "driver_id";
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -31,7 +27,10 @@ public class AuthenticationFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
         String url = req.getServletPath();
-        if (url.equals("/login") || url.equals("/drivers/add")) {
+        Set<String> permittedUrls = new HashSet<>();
+        permittedUrls.add("/login");
+        permittedUrls.add("/drivers/add");
+        if (permittedUrls.contains(url)) {
             chain.doFilter(req, resp);
             return;
         }
