@@ -17,7 +17,8 @@ Store **registered Users** can perform the following actions:
 
 * login;
 * see all information
-* delete his cars
+* delete his cars and other cars
+* delete manufacturers 
 * delete himself or other drivers from the service;
 
 
